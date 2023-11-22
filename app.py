@@ -7,6 +7,7 @@ Created on Sun Nov 19 23:30:19 2023
 
 # import requests
 # from bs4 import BeautifulSoup
+import langchain
 from langchain.docstore.document import Document
 from langchain.embeddings import OpenAIEmbeddings
 from dotenv import load_dotenv
