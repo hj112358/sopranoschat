@@ -1,4 +1,3 @@
 streamlit
-langchain[all]
+langchain
 openai
-tiktoken
