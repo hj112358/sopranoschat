@@ -10,7 +10,6 @@ Created on Sun Nov 19 23:30:19 2023
 import langchain
 from langchain.docstore.document import Document
 from langchain.embeddings import OpenAIEmbeddings
-from dotenv import load_dotenv
 import openai
 import os
 from langchain.chat_models import ChatOpenAI
