@@ -24,13 +24,6 @@ from langchain.prompts import ChatPromptTemplate
 import streamlit as st
 
 
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
-
-
-
-
 # # # also extract episode title, so later they can be easily referenced
 # # # instead of a big block of text?
 # # # extract info from textbox at top of each episode page - title, episode and season number?
