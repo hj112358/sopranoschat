@@ -99,26 +99,28 @@ import streamlit as st
 # extract_episode_summaries()
 
 # synopsis_textfile_path = "langchain/series-synopsis.txt"
-synopsis_textfile_path = "series-synopsis.txt"
+# synopsis_textfile_path = "etc/series-synopsis.txt"
 
 
-# # # now to try embedding
+# # # # now to try embedding
 
-# loader = TextLoader(synopsis_textfile_path)  
-# text = loader.load()
-with open(synopsis_textfile_path, encoding='utf-8') as f:
-    text = f.read()
+# # loader = TextLoader(synopsis_textfile_path)  
+# # text = loader.load()
+# with open(synopsis_textfile_path, encoding='utf-8') as f:
+#     text = f.read()
 
-# # # will this text split work better than a /n which was inadvertently splitting at least one synopsis into two..?
-docs = text.split("\n")
+# # # # will this text split work better than a /n which was inadvertently splitting at least one synopsis into two..?
+# docs = text.split("\n")
 
-documents = []
-for i, doc_text in enumerate(docs):
-    doc = Document(page_content=doc_text, metadata={"id": i})
-    documents.append(doc)
+# documents = []
+# for i, doc_text in enumerate(docs):
+#     doc = Document(page_content=doc_text, metadata={"id": i})
+#     documents.append(doc)
 
 embedding_method = OpenAIEmbeddings()
-db = FAISS.from_documents(documents, embedding_method)
+# db = FAISS.from_documents(documents, embedding_method)
+# db.save_local("faiss_index")
+db = FAISS.load_local("faiss_index", embedding_method)
 retriever = db.as_retriever()
 
         
@@ -151,4 +153,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
