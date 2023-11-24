@@ -3,3 +3,4 @@ langchain
 openai
 tiktoken
 faiss-cpu
+pickle
