@@ -132,7 +132,7 @@ def main():
         page_title="Sopranos Chatbot", page_icon=":bird:")
 
     st.header("Sopranos Chatbot :bird:")
-    message = st.text_area("Ask a question about 'The Sopranos'. Knowledge currently limited to Wikipedia episode synopses.")
+    message = st.text_area("Ask a question...")
 
     if message:
         st.write("Generating message...")
